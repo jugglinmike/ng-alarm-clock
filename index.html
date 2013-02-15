@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<title></title>
+		<link rel="stylesheet" href="styles/index.css" type="text/css">
+		<script src="scripts/lib/angular.js"></script>
+		<script src="scripts/app.js"></script>
+	</head>
+	<body ng-controller="Clock">
+		<h1 class="current-time">
+			<span class="hour">{{time.hour}}</span><span class="colon">:</span><!--
+			--><span class="minute">{{time.minute}}</span><!--
+			--><span class="colon">:</span><!--
+			--><span class="second">{{time.second}}</span>
+		</h1>
+	</body>
+</html>

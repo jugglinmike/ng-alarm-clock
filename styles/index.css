@@ -1,0 +1,16 @@
+@font-face {
+	font-family: 'Droid Sans Mono';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Droid Sans Mono'), local('DroidSansMono'), url(http://themes.googleusercontent.com/static/fonts/droidsansmono/v4/ns-m2xQYezAtqh7ai59hJUYuTAAIFFn5GTWtryCmBQ4.woff) format('woff');
+}
+
+body {
+	background-color: #333;
+	color: #aaa;
+}
+.current-time {
+	text-align: center;
+	font-family: 'Droid Sans Mono', mono;
+	font-size: 6em;
+}
