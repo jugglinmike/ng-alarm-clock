@@ -8,10 +8,10 @@
 	</head>
 	<body ng-controller="ClockCtrl">
 		<h1 class="current-time">
-			<span class="hour">{{time.hour}}</span><span class="colon">:</span><!--
-			--><span class="minute">{{time.minute}}</span><!--
+			<span class="hour">{{time | date:'HH'}}</span><span class="colon">:</span><!--
+			--><span class="minute">{{time | date:'mm'}}</span><!--
 			--><span class="colon">:</span><!--
-			--><span class="second">{{time.second}}</span>
+			--><span class="second">{{time | date:'ss'}}</span>
 		</h1>
 	</body>
 </html>
