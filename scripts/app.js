@@ -1,4 +1,4 @@
-function Clock($scope, $timeout) {
+function ClockCtrl($scope, $timeout) {
 	$scope.time = {};
 
 	$scope.formatTimePart = function(value) {
