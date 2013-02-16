@@ -1,0 +1,11 @@
+<li class="alarm add-new" ng-model="newAlarm">
+	<input type="time" ng-model="newAlarm.time">
+	<input type="text" ng-model="newAlarm.title">
+	<button class="create" ng-click="create()">Create</button>
+</li>
+<li class="alarm" ng-repeat="alarm in alarms">
+	<span class="time">{{ alarm.time | date:'HH:mm' }}</span>
+	<h1 class="title">{{ alarm.title }}</h2>
+	<span class="schedule">{{ alarm.schedule }}</span>
+	<button class="remove" ng-click="remove(alarm)">&times;</button>
+</li>

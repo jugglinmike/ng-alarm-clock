@@ -1,13 +1,4 @@
-function ClockCtrl($scope, $timeout) {
-
-	$scope.resetTime = function() {
-		$scope.time = new Date();
-	};
-
-	var update = function() {
-		$scope.resetTime();
-		$timeout(update, 1000);
-	};
-
-	update();
-}
+angular.module("alarmClock", []).
+	config(["$routeProvider", function($routeProvider) {
+		$routeProvider.otherwise({ templateUrl: "partials/alarm.html", controller: AlarmCtrl });
+	}]);

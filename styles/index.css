@@ -5,12 +5,60 @@
 	src: local('Droid Sans Mono'), local('DroidSansMono'), url(http://themes.googleusercontent.com/static/fonts/droidsansmono/v4/ns-m2xQYezAtqh7ai59hJUYuTAAIFFn5GTWtryCmBQ4.woff) format('woff');
 }
 
+* {
+	box-sizing: border-box;
+}
 body {
 	background-color: #333;
 	color: #aaa;
+	margin: 0;
+	padding: 0;
+	border: 0;
 }
 .current-time {
 	text-align: center;
 	font-family: 'Droid Sans Mono', mono;
 	font-size: 6em;
+}
+.alarms {
+	list-style-type: none;
+	margin: 0 auto;
+	padding: 0;
+	width: 50%;
+}
+.alarm {
+	background-color: #444;
+	border-radius: 10px;
+	padding: 10px;
+	position: relative;
+	margin-bottom: 9px;
+	transition: opacity 0.4s;
+	-webkit-transition: opacity 0.4s;
+	opacity: 0.4;
+} .alarm .time {
+	display: block;
+	font-size: 2em;
+	font-family: 'Droid Sans Mono', mono;
+} .alarm .title {
+	margin: 0;
+	font-size: 1em;
+	display: inline;
+	font-weight: normal;
+} .alarm .remove, .alarm .create {
+	cursor: pointer;
+	position: absolute;
+	background-color: transparent;
+	color: inherit;
+	top: 0;
+	right: 0;
+	display: block;
+	height: 100%;
+	text-align: center;
+	border: solid 2px #555;
+	border-radius: 10px;
+	margin: 0;
+} .alarm .remove {
+	font-size: 2em;
+} .alarm:hover {
+	opacity: 1;
 }

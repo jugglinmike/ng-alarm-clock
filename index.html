@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="alarmClock">
 	<head>
 		<title></title>
 		<link rel="stylesheet" href="styles/index.css" type="text/css">
 		<script src="scripts/lib/angular.js"></script>
+		<script src="scripts/controllers.js"></script>
 		<script src="scripts/app.js"></script>
 	</head>
 	<body ng-controller="ClockCtrl">
@@ -13,5 +14,7 @@
 			--><span class="colon">:</span><!--
 			--><span class="second">{{time | date:'ss'}}</span>
 		</h1>
+		<ul class="alarms" ng-view>
+		</ul>
 	</body>
 </html>
