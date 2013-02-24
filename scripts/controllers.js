@@ -9,7 +9,7 @@ function ClockCtrl($scope, $timeout, clock) {
 	});
 }
 
-function AlarmCtrl($scope) {
+function AlarmCtrl($scope, clock) {
 	var newAlarm = $scope.newAlarm = {};
 	var alarms = $scope.alarms = [
 		{
@@ -28,6 +28,25 @@ function AlarmCtrl($scope) {
 			schedule: [25, 26, 27, 28]
 		}
 	];
+
+	$scope.isActive = function(now, alarmTime) {
+		return alarmTime.getHours() === now.getHours() &&
+			alarmTime.getMinutes() === now.getMinutes();
+	};
+
+	$scope.activate = function(alarm) {
+		if (!alarm.action) {
+			window.alert("!!!", alarm.title, "!!!");
+		}
+	};
+
+	clock.on("minute", function() {
+		angular.forEach(alarms, function(alarm) {
+			if ($scope.isActive(clock.time, alarm.time)) {
+				$scope.activate(alarm);
+			}
+		});
+	});
 
 	$scope.remove = function(alarm) {
 		alarms.splice(alarms.indexOf(alarm), 1);
