@@ -1,15 +1,12 @@
-function ClockCtrl($scope, $timeout) {
+function ClockCtrl($scope, $timeout, clock) {
 
-	$scope.resetTime = function() {
-		$scope.time = new Date();
-	};
+	// Initialize the current time immediately
+	$scope.time = clock.time;
 
-	var update = function() {
-		$scope.resetTime();
-		$timeout(update, 1000);
-	};
-
-	update();
+	// Keep the time in sync
+	clock.on("second", function() {
+		$scope.time = clock.time;
+	});
 }
 
 function AlarmCtrl($scope) {
